@@ -1,0 +1,4 @@
+**Problem**
+Model an ATM that a user interacts with step by step. The machine is always in one of these states: `Idle` (waiting for card), `CardInserted` (card in, waiting for PIN), `Authenticated` (PIN correct, waiting for action), `TransactionProcessing` (dispensing cash or processing deposit). Each state only allows certain actions — for example, you cannot withdraw money from the `Idle` state, and inserting a card when one is already inserted should do nothing or show an error. Transitions happen on events: insert card, enter PIN, select withdraw/deposit, eject card. Wrong PIN three times should lock the card and return to Idle.
+
+**What to focus on:** Define a `State` interface with methods like `InsertCard()`, `EnterPin()`, `Withdraw()`, `EjectCard()`. Each state struct implements the interface and handles only valid transitions. The ATM struct holds a reference to the current state and delegates all actions to it.

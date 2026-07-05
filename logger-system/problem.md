@@ -1,0 +1,4 @@
+**Problem**
+Build a logging library similar to how `log4j` or Go's `slog` works. A `Logger` should support four log levels — `DEBUG`, `INFO`, `WARN`, `ERROR` — and only print messages at or above a configured minimum level. The logger should support multiple output destinations called appenders: one writes to the console, another writes to a file. Both appenders must follow the same interface so the logger doesn't care which one it's talking to. You should be able to attach multiple appenders to one logger at the same time. For example: logger set to `WARN` level with both console and file appenders — calling `logger.Info("hello")` does nothing, calling `logger.Error("crash")` writes to both destinations.
+
+**What to focus on:** Define an `Appender` interface. Make `ConsoleAppender` and `FileAppender` implement it. The logger holds a slice of appenders and iterates over them. Switching output strategy = swapping the appender.
