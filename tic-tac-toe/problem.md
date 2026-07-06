@@ -1,0 +1,4 @@
+**Problem**
+Build a two-player Tic Tac Toe game that runs in the terminal. The board is 3×3. Players take turns entering a row and column to place their mark (X or O). After each move, check if the current player has won (three in a row — horizontal, vertical, or diagonal) or if the board is full with no winner (draw). Invalid moves (cell already taken, out of bounds) should prompt the player to try again without switching turns. The game ends and announces the winner or draw, then asks if players want to play again.
+
+**What to focus on:** Model `Board`, `Player`, and `Game` as separate structs. Keep win-checking logic inside `Board`. `Game` controls the turn loop. No patterns needed — this is about clean struct decomposition and method responsibility.
