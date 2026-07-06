@@ -1,0 +1,4 @@
+**Problem**
+Design a pizza ordering system where a pizza is built step by step with many optional customisations. A pizza has: a required size (small/medium/large), a required crust type (thin/thick/stuffed), optional sauce (tomato/pesto/white), optional cheese (mozzarella/cheddar/vegan), and a list of toppings (mushrooms, olives, peppers, etc.). The final price is computed from the combination of choices. The goal is to construct a `Pizza` object without a constructor that takes 10 parameters. A `PizzaBuilder` should let you chain calls like `SetSize → SetCrust → AddTopping → Build()` and return a validated, immutable `Pizza`.
+
+**What to focus on:** Create a `PizzaBuilder` struct with setter methods that each return the builder (method chaining). `Build()` validates required fields and returns a `Pizza` struct. This is Go's idiomatic alternative to optional constructor args.
